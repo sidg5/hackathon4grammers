@@ -1,0 +1,104 @@
+<html>
+<head>
+<script>
+
+function myFunction(obj)
+ {
+    var selectBox = obj;
+	var selected = selectBox.options[selectBox.selectedIndex].value;
+    var textarea = document.getElementById("abc");
+
+    if(selected === 'default'){
+        textarea.style.display = "none";
+    }
+    else{
+        textarea.style.display = "block";
+    }
+}
+</script>
+<style>
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 35px;
+   overflow: hidden;
+   width: 250px;
+}
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+   font-size: 19px;
+   
+}
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+.blue    { background-color: #3b8ec2; }
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}
+</style>
+</head>
+<body background="images/bgimage.jpg">
+<center><h2 style = "font-family:calibri; margin:15px">Tanker Monitoring System</h2></div>
+<hr>
+<div style = "margin-top:35px" class="styled-select blue semi-square">
+<select id="combo" style="font-family:calibri;" onchange="myFunction(this)">
+  <option value="default" selected="selected">Please Select an Area</option>
+  <optgroup label="Old Gurgaon">
+	<option value="sector4">Sector 4</option>
+	<option value="sector5">Sector 5</option>
+	<option value="sector7">Sector 7</option>
+    <option value="sector9a">Sector 9A</option>
+    <option value="sector9">Sector 9</option>
+  </optgroup>
+  <optgroup label="New Gurgaon">
+	<option value="sector28">Sector 28</option>
+	<option value="sector29">Sector 29</option>
+	<option value="sector30">Sector 30</option>
+    <option value="sector31">Sector 31</option>
+    <option value="sector32">Sector 32</option>
+  </optgroup></div>
+</select></center>
+
+<!--<div id="myProgress">
+  <div id="myBar"></div>
+</div>-->
+<div id="abc" style="display:none">
+<table border="0" id ="table">
+  <tr>
+    <td><img src="images/tanker.png" height="50px" width="90px"/></td>
+	<td>             </td>
+    <td><img src="images/tanker.png" height="50px" width="90px"/></td>
+	<td>             </td>
+    <td><img src="images/tanker.png" height="50px" width="90px"/></td>
+	<td>             </td>
+    <td><img src="images/tanker.png" height="50px" width="90px"/></td>
+	<td>             </td>
+  </tr>
+  <tr>
+    <td>KA EM 51 8863</td>
+	<td>             </td>
+    <td>KA EM 51 8563</td>
+	<td>             </td>
+     <td>KA EM 51 8263</td>
+	 <td>             </td>
+    <td>KA EM 51 8653</td>
+	<td>             </td>
+  </tr>
+  
+</table>
+</div>
+</body>
+</html>
