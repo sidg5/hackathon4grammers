@@ -22,7 +22,7 @@ public class ConnectToDB
         {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(
-                "jdbc:mysql://132.186.96.129:3306/hackathondb", "root", "");
+                "jdbc:mysql://localhost:3306/hackathondb", "root", "");
         }
         catch (ClassNotFoundException | SQLException e)
         {

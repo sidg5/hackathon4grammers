@@ -1,7 +1,7 @@
 <web-app>
 	<display-name>PlantWateringSystem</display-name>
 	<welcome-file-list>
-		<welcome-file>pages/RemoteClientLogin.html</welcome-file>
+		<welcome-file>pages/Sample.html</welcome-file>
 	</welcome-file-list>
 
 	<servlet>

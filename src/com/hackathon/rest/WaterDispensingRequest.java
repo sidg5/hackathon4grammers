@@ -15,13 +15,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;  
 
 import com.hackathon.dao.ConnectToDB;
-@Path("/waterDispensing")  
+@Path("/waterdispensing")  
 public class WaterDispensingRequest 
 {
     @POST  
     @Path("/request")  
     public Response addUser(  
-        @FormParam("truckID") String truckID)
+        @FormParam("truckid") String truckID)
     {  
         
         System.out.println("truckID:"+ truckID);
