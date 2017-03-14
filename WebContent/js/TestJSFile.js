@@ -11,7 +11,7 @@
 			   },
 			   success: function(data) {
 				   alert("success");
-				   alert(data);
+				   init();
 			   },
 			   type: 'GET'
 			});
@@ -27,7 +27,7 @@
 			   },
 			   success: function(data) {
 				   alert("success");
-				   alert(data);
+				   init(data);
 			   },
 			   type: 'POST'
 			});

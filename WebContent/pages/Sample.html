@@ -5,15 +5,48 @@
 
 <script type = "text/javascript" 
          src = "./js/TestJSFile.js"></script>
+         <script>
+         
+         function loadDoc() {
+        	    var xhttp = new XMLHttpRequest();
+        	    xhttp.onreadystatechange = function() {
+        	        if (this.readyState == 4 && this.status == 200) {
+        	            document.getElementById("demo").innerHTML =
+        	            this.responseText;
+        	       }
+        	    };
+        	    xhttp.open("POST", "http://localhost:8080/hackathon4grammers/rest/waterDispensing/request", true);
+        	    xhttp.send(); 
+        	}
+         
+         function SubmitRequest() {
+            new Ajax.Request('/pages/rest/water/dispense', {
+               method: 'post',
+               onSuccess: successFunc,
+               onFailure:  failureFunc
+            });
+         }
+         function successFunc(response) {
+            if (200 == response.status) {
+               alert("Call is success");
+            }
+            var container = $('notice');
+            var content = response.responseText;
+            container.update(content);
+         }
+         function failureFunc(response) {
+            alert("Call is failed" );
+         }
+      </script>
 </head>
 <body>
 	<h1>Truck UI</h1>
-
-	<form action="rest/water/dispense" method="post">
+<input type="text" id="demo">
+	<form>
 		<p>
 			Truck Id : <input type="text" name="truckid" />
 		</p>
-		<input type="submit" value="Request Dispensing System to Fill Water" />
+		<input type="submit" onclick="loadDoc()" value="Request Dispensing System to Fill Water" />
 	</form>
 
 </body>

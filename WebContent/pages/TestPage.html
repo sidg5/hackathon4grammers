@@ -8,9 +8,28 @@
 
 <script type = "text/javascript" 
          src = "./js/TestJSFile.js"></script>
+<script type="text/javascript">
+    function init(responseText) {
+    	var dataTable = document.getElementById("demo");
+    	var row1 = dataTable.insertRow();
+        var row2 = dataTable.insertRow();
+        
+        var cell00 = row1.insertCell();
+        var cell01 = row1.insertCell();
+        var cell10 = row2.insertCell();
+        var cell11 = row2.insertCell();
+         //kustuta
+
+        cell00.innerHTML = responseText;
+        cell01.innerHTML = "Data 2";
+        cell10.innerHTML = "Data 3";
+        cell11.innerHTML = "Data 4";
+    }
+</script>
 </head>
 <body>
 
+	<table id="demo" style="border: 1px solid black;"></table>
 	<div>
 		<button id="sampleButtom">Hit this button to run ajax call</button>
 	</div>
