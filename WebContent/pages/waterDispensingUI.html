@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script type = "text/javascript" 
+         src = "./js/TestJSFile.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+        
+        setInterval(callAgain, 5000);
+        function callAgain()
+        {
+        	
+        	$.ajax({
+ 			   url: 'http://localhost:8080/hackathon4grammers/rest/handleDispenseRequest/fetchTrips',
+ 			  	headers: { 
+ 		           'Accept': 'application/json',
+ 		           'Content-Type': 'application/json' 
+ 		       	},
+ 		        mimeType: 'application/json',
+ 		      	dataType: "json",
+ 		        contentType: "application/json",
+ 			   	success: function(data) {
+ 				   alert(data.truckId);
+ 				   init(data);
+ 			   	},
+ 			   	error: function(data) {
+ 				   alert("failure");
+ 			   	},
+ 			   	type: 'POST'
+ 			});
+        }
+    });
+ 
+</script>
+<script type="text/javascript">
+    function init(responseText) 
+    {
+    	alert(responseText);
+    	var dataTable = document.getElementById("requestTable");
+    	dataTable.style.visibility="visible";
+    	var row1 = dataTable.insertRow();
+        var row2 = dataTable.insertRow();
+        
+        var cell00 = row1.insertCell();
+        var cell01 = row1.insertCell();
+        var cell10 = row2.insertCell();
+        var cell11 = row2.insertCell();
+
+        cell00.innerHTML = responseText;
+        cell01.innerHTML = "Data 2";
+        cell10.innerHTML = "Data 3";
+        cell11.innerHTML = "Data 4";
+    }
+</script>
+</head>
+<body>
+	<center>
+		<h1>WATER DISPENSING UI</h1>
+	</center>
+	<table id="requestTable" style="border: 1px solid black;">
+	<tr>
+    	<th>Truck Number</th>
+    	<th>Water Needed</th> 
+    	<th>Approve</th>
+  	</tr>
+	</table>
+	<!-- <div>
+		<button id="sampleButtom">Hit this button to run ajax call</button>
+	</div> -->
+
+</body>
+</html>
