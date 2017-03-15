@@ -15,7 +15,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;  
 
 import com.hackathon.dao.ConnectToDB;
-@Path("/waterdispensing")  
+@Path("/waterDispensing")  
 public class WaterDispensingRequest 
 {
     @POST  

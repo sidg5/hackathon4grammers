@@ -17,17 +17,18 @@
 			});
 	
 	 });
-	 
+	  var truckID =$('#truckid').val();
+	  //alert("truckID:"+truckID);
 	 $('#tankFill').click(function (event) {
-		 
+		
 		 $.ajax({
 			   url: 'http://localhost:8080/hackathon4grammers/rest/waterDispensing/request',
 			   data: {
-			      format: 'json'
+			      format: 'json',
+			      'truckid': truckID
 			   },
 			   success: function(data) {
-				   alert("success");
-				   init(data);
+				   //alert("success");
 			   },
 			   type: 'POST'
 			});
