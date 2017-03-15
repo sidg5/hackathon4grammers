@@ -2,21 +2,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Water Dispensing UI</title>
 <link rel="stylesheet" href="css/template.css">
-<script type = "text/javascript" 
-         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-<script type = "text/javascript" 
-         src = "./js/TestJSFile.js"></script>
+<link rel="stylesheet" href="css/modalPopup.css">
+<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type = "text/javascript" src = "./js/TestJSFile.js"></script>
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>
-    $( document ).ready(function() {
-        
+    $( document ).ready(function()
+	{
         setInterval(callAgain, 5000);
         function callAgain()
         {
-        	
         	$.ajax({
  			   url: 'http://localhost:8080/hackathon4grammers/rest/handleDispenseRequest/fetchTrips',
  			  	headers: { 
@@ -30,7 +27,7 @@
  				   init(data);
  			   	},
  			   	error: function(data) {
- 				   alert("failure");
+ 				   
  			   	},
  			   	type: 'POST'
  			});
@@ -41,6 +38,17 @@
 <script type="text/javascript">
     function init(responseText) 
     {
+    	var modal = document.getElementById('myModal');
+    	var span = document.getElementsByClassName("close")[0];
+    	span.onclick = function() {
+    	    modal.style.display = "none";
+    	}
+    	window.onclick = function(event) {
+    	    if (event.target == modal) {
+    	        modal.style.display = "none";
+    	    }
+    	}
+    	
     	var dataTable = document.getElementById("requestTable");
     	dataTable.style.visibility="visible";
     	var row1 = dataTable.insertRow();
@@ -49,25 +57,55 @@
         var cell01 = row1.insertCell();
         var cell02 = row1.insertCell();
         var cell03 = row1.insertCell();
+        var cell04 = row1.insertCell();
 
+        var aTag = document.createElement('a');
+        aTag.className = "btn"; 
+        <!-- aTag.setAttribute('href', responseText.truckId); -->
+        aTag.innerHTML = "APPROVE";
+        aTag.onclick = function() {
+            modal.style.display = "block";
+        }
         cell00.innerHTML = responseText.truckNumber;
         cell01.innerHTML = responseText.areaName;
         cell02.innerHTML = responseText.noOfPatches;
         cell03.innerHTML = responseText.waterNeedDispense;
+        cell04.appendChild(aTag);
+        
     }
 </script>
 </head>
 <body>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Water Dispensing Started</h2>
+    </div>
+    <div class="modal-body">
+      <p>Some text in the Modal Body</p>
+      <p>Some other text...</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Modal Footer</h3>
+    </div>
+  </div>
+
+</div>
 <section>
 	<h1>Water Dispensing Screen</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          	<th>Truck Number</th>
-    		<th>Area</th> 
-    		<th>No of Patches</th>
-          	<th>Water to be Filled</th>
+          	<th>TANKER NUMBER</th>
+    		<th>AREA TO BE COVERED</th> 
+    		<th>NO OF PATCHES</th>
+          	<th>WATER TO BE DISPENSED</th>
+          	<th>STATUS</th>
         </tr>
       </thead>
     </table>
