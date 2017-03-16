@@ -44,7 +44,7 @@
 	 $('#tankFill').click(function (event) {
 		
 		 $.ajax({
-			   url: 'http://localhost:8080/hackathon4grammers/restful/waterDispensing/request',
+			   url: 'http://localhost:8080/hackathon4grammers/rest/waterdispensing/request',
 			   data: {
 			      format: 'json',
 			     // 'truckid': truckID
@@ -66,7 +66,7 @@
 		 var userRole =$('#userRole').val();
 		 
 		 $.ajax({
-			   url: 'http://localhost:8080/hackathon4grammers/restful/userLogin/request',
+			   url: 'http://localhost:8080/hackathon4grammers/rest/userLogin/request',
 			   data: {
 			      format: 'json',
 			      'userid': userid,
