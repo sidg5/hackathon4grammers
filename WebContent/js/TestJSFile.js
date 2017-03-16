@@ -41,13 +41,15 @@
 	//var xyz = jQuery.url.param("truckId");
 	  //var truckID =$('#truckid').val();
 	 // alert("xyz: "+xyz);
+	
 	 $('#tankFill').click(function (event) {
-		
+		 var query = findGetParameter('truckId');
+		 alert("query: "+query);
 		 $.ajax({
 			   url: 'http://localhost:8080/hackathon4grammers/rest/waterdispensing/request',
 			   data: {
 			      format: 'json',
-			     // 'truckid': truckID
+			      'truckid': query
 			   },
 			   success: function(data) {
 				   //alert("success");
@@ -57,7 +59,16 @@
 	
 	 });
 	 
-	 
+	 function findGetParameter(parameterName) {
+		    var result = null,
+		        tmp = [];
+		    var items = location.search.substr(1).split("&");
+		    for (var index = 0; index < items.length; index++) {
+		        tmp = items[index].split("=");
+		        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+		    }
+		    return result;
+		}
 	
 	 $('#loginReq').click(function (event) {
 		
