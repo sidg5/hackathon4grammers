@@ -5,7 +5,7 @@
  * 
  */
 
-package com.hackathon.rest;
+package com.hackathon.restful;
 
 import java.sql.Connection;
 
@@ -15,7 +15,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;  
 
 import com.hackathon.dao.ConnectToDB;
-@Path("/waterDispensing")  
+@Path("/waterdispensing")  
 public class WaterDispensingRequest 
 {
     @POST  
