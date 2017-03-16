@@ -2,7 +2,7 @@
  * 
  */$(document).ready(function () {
 	 var rootURL = "http://localhost:8080/hackathon4grammers/rest/wines/post";
-	 $('#sampleButtom').click(function (event) {
+	 $('#sampleButton').click(function (event) {
 	 
 		 $.ajax({
 				type: 'POST',
