@@ -1,7 +1,7 @@
 <web-app>
 	<display-name>PlantWateringSystem</display-name>
 	<welcome-file-list>
-		<welcome-file>pages/TestPage.html</welcome-file>
+		<welcome-file>pages/TruckUserLogin.html</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>Jersey</servlet-name>

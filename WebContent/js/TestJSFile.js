@@ -37,4 +37,50 @@
 				"name":"3"
 				});
 		}
+	 
+	//var xyz = jQuery.url.param("truckId");
+	  //var truckID =$('#truckid').val();
+	 // alert("xyz: "+xyz);
+	 $('#tankFill').click(function (event) {
+		
+		 $.ajax({
+			   url: 'http://localhost:8080/hackathon4grammers/rest/waterDispensing/request',
+			   data: {
+			      format: 'json',
+			     // 'truckid': truckID
+			   },
+			   success: function(data) {
+				   //alert("success");
+			   },
+			   type: 'POST'
+			});
+	
+	 });
+	 
+	 
+	
+	 $('#loginReq').click(function (event) {
+		
+		 var userid =$('#userid').val();
+		 var password =$('#password').val();
+		 var userRole =$('#userRole').val();
+		 
+		 $.ajax({
+			   url: 'http://localhost:8080/hackathon4grammers/rest/userLogin/request',
+			   data: {
+			      format: 'json',
+			      'userid': userid,
+			      'password': password,
+			      'userRole': userRole
+			   },
+			   success: function(data) {
+				   window.location.href = "pages/RemoteClientLogin.html?truckId="+data;
+			   },
+			   error: function(data) {
+				   alert("faliure");
+			   },
+			   type: 'POST'
+			});
+	
+	 });
 });
