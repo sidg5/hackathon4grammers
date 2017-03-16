@@ -1,4 +1,4 @@
-package com.hackathon.rest;
+package com.hackathon.restful;
  
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
