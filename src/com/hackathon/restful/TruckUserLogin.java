@@ -5,7 +5,7 @@
  * 
  */
 
-package com.hackathon.rest;
+package com.hackathon.restful;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
