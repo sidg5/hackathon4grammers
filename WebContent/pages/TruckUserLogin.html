@@ -2,28 +2,49 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login - Automatic Water Dispensing</title>
+<link rel="stylesheet" href="./css/template.css">
 <script type = "text/javascript" 
          src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type = "text/javascript" 
-         src = "./js/TestJSFile.js"></script>
+         src = "../js/TestJSFile.js"></script>
 </head>
 <body>
+<br><br>
+<section>
+<form style="margin-left: 400px; margin-right: 400px">
+<div class="tbl-content">
+<table>
+<tr>
+ <td>User ID  </td>
+ <td><input type="text" id="userid" name="userid"/></td>
+</tr>
+<tr>
+ <td>Password  </td>
+ <td><input type="text" id="password" name="password"/></td>
+</tr>
 
- User ID - <input type="text" id="userid" name="userid"/><br/><br/>  
-  Password - <input type="text" id="password" name="password"/><br/><br/>  
-
- UserRole- <select id="userRole">
-  <option value="Admin">Admin</option>
-  <option value="Driver">Driver</option>
-  <option value="Dispenser">Dispenser</option>
-</select></br></br>
-
-<input type="button" value="Sumbit" id="loginReq"/> 
-<br/><br/>
-
-
+<tr>
+ <td>UserRole  </td>
+ <td>
+ 	<select id="userRole">
+  		<option value="Admin">Admin</option>
+  		<option value="Driver">Driver</option>
+  		<option value="Dispenser">Dispenser</option>
+	</select>
+</td>
+</tr>
+<tr>
+ <td><input class="btn" type="button" value="Sumbit" id="loginReq"/></td>
+ <td>
+ 	<input class="btn" type="reset" value="Reset" id="loginReq"/>
+</td>
+</tr>
+</table>
+</div>
+</form>
+</section>
 </body>
 </html>
 
